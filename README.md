@@ -24,8 +24,8 @@ A Lists of all motivational quotes, riddle, poetry, motivational speech from all
 
 ## Screenshots
 <div>
-<img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (1).gif"> </img>
-<img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (2).gif"> </img>
+<img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (1).png"> </img>
+<img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (2).png"> </img>
   <img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (3).png"> </img>
   <img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (4).png"> </img>
   <img width="250" src="https://github.com/larazan/whatAwords_admin/blob/main/screenshots/mobile (5).png"> </img>
