@@ -54,7 +54,7 @@ import {
 
 import { USER_SERVER } from '../components/utils/misc';
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (logg) => async (dispatch) => {
     try {
       dispatch({
         type: USER_LOGIN_REQUEST,
@@ -68,7 +68,7 @@ export const login = (email, password) => async (dispatch) => {
   
       const { data } = await axios.post(
         `${USER_SERVER}/login`,
-        { email, password },
+        logg,
         config
       )
   

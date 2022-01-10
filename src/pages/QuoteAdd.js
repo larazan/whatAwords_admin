@@ -9,8 +9,12 @@ import { QUOTE_CREATE_RESET } from "../actions/types";
 
 import Breadcrumb from "../components/Breadcrumb";
 import SubHeader from "../components/SubHeader";
+import TagsInput from "../components/TagsInput";
 import Loading from "../components/Loading";
 import CustomSelect from "../components/Form/CustomSelect";
+
+import { fontFamily } from "../assets/data/fontFamily";
+import { gradients } from "../assets/data/gradients";
 
 const QuoteAdd = () => {
   const [toggle, setToggle] = useState(true);
@@ -27,7 +31,7 @@ const QuoteAdd = () => {
     createdBy: "",
     status: "",
     publish: true,
-    tags: {},
+    tags: "",
     size: "",
     style: "",
     color: "",
@@ -37,6 +41,22 @@ const QuoteAdd = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+
+  const [tags, setTags] = useState([]);
+  const [errors, setErrors] = useState({});
+
+  const changeHandler = (name, value) => {
+    if (name === "tags") {
+      setTags(value);
+      if (value.length > 0 && errors.tags) {
+        setErrors((prev) => {
+          const prevErrors = { ...prev };
+          delete prevErrors.tags;
+          return prevErrors;
+        });
+      }
+    }
+  };
 
   const dispatch = useDispatch();
 
@@ -95,98 +115,6 @@ const QuoteAdd = () => {
       name: "Yellow",
       color: "#ead99a",
     },
-  ];
-
-  const fontFamily = [
-    "Aelten",
-    "Alphakind",
-    "Amellis",
-    "Mollusca",
-    "Bajurie",
-    "Banda-Aceh",
-    "Bitcrusher",
-    "Blue_highway_cd",
-    "Borg",
-    "Bright-Dreams",
-    "Chandella",
-    "Chinese-Rocks",
-    "Cokobi",
-    "Colombia",
-    "ConcreteWall",
-    "Coolvetica",
-    "Dakwart",
-    "DAGOCA",
-    "Dealerplate-California",
-    "Dream-Orphans",
-    "Elliane-Regular",
-    "Engebrechtre",
-    "ENGINE",
-    "Foo",
-    "Gnuolane",
-    "Gratise",
-    "Groomer",
-    "Halmera",
-    "HappyGarden",
-    "Hellohowareyou",
-    "Helsinki",
-    "Inter-Regular",
-    "Jreeng",
-    "JustSmile",
-    "Kaylafiz",
-    "Kimberley",
-    "LazySunday",
-    "Leorio",
-    "Limejuice",
-    "Lovetle",
-    "Lynoselt",
-    "MatSaleh",
-    "MelocheBook",
-    "MightyKingdom",
-    "Monofonto",
-    "Morganite-Light",
-    "MorningMiow",
-    "Mounets",
-    "NoVirus",
-    "NugoSansLight",
-    "Oaklevin",
-    "Ontel",
-    "Peace",
-    "PeachyRose",
-    "Pouline",
-    "Pretender",
-    "QuickCount",
-    "Rakesly",
-    "Rennoya",
-    "ROLAND",
-    "Saolice",
-    "SimpalaExtended",
-    "SingleSleeve",
-    "StraightlerRegular",
-    "SweetSomeday",
-    "Tahu",
-    "Thruster-Regular",
-    "VirusKiller",
-    "WallabysJunior",
-    "WanitaCantik",
-    "ZZYZX",
-    "WhereTheCookies",
-    "WKSimple",
-    "Arvo-Regular",
-    "Cinzel-Regular",
-    "Domine-Regular",
-    "LiberationSerif-Regular",
-    "Lustria-Regular",
-    "Mohave-Regular",
-    "Montserrat-Regular",
-    "NotoSans-Regular",
-    "Promesh_Regular",
-    "Raleway-Regular",
-    "Rubik-Regular",
-    "Zaio",
-    "Antonio-Regular",
-    "Bitter-Regular",
-    "COBAISSI",
-    "CrimsonText-Roman",
   ];
 
   const handleChange = (e) => {
@@ -529,14 +457,13 @@ const QuoteAdd = () => {
                         Background Color
                       </label>
                   
-                      <div className="flex justify-center space-x-1">
-                        {hue.map((color) => (
+                      <div className="flex flex-wrap space-x-1">
+                        {gradients.map((color) => (
                           <div className="flex inline py-2">
                             <button className="h-8 w-8 flex flex-col border border-gray-300 rounded-full overflow-hidden focus:ring-2 focus:ring-offset-1 focus:ring-gray-900 focus:outline-none">
                               <span className="h-full w-full flex flex-col transform">
                                 <span
-                                  className="h-8 w-8"
-                                  style={{ backgroundColor: color.color }}
+                                  className={`h-8 w-8 ${color.tail}`}
                                 ></span>
                               </span>
                             </button>
@@ -577,14 +504,23 @@ const QuoteAdd = () => {
                       >
                         Tags
                       </label>
-                      <input
+                      <TagsInput
+                        label="Tags"
+                        id="tags"
+                        name="tags"
+                        placeholder="Add tag"
+                        onChange={changeHandler}
+                        error={errors.tags}
+                        defaultTags={tags}
+                      />
+                      {/* <input
                         type="text"
                         name="tags"
                         id="tags"
                         className="h-10 border mt-1 rounded flex-1 px-4 w-full sm:text-sm border-gray-300"
                         value={formValues.tags}
                         onChange={handleChange}
-                      />
+                      /> */}
                       <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                         {formErrors.tags}
                       </span>

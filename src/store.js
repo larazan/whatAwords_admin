@@ -62,6 +62,23 @@ import {
   userCollectionReducer,
 } from './reducers/user_reducer'
 
+import {
+  articlesListReducer,
+  articleDetailReducer,
+  articleDeleteReducer,
+  articleCreateReducer,
+  articleUpdateReducer,
+  articleBySlugReducer,
+} from './reducers/articles_reducer'
+
+import {
+  faqsListReducer,
+  faqDetailReducer,
+  faqDeleteReducer,
+  faqCreateReducer,
+  faqUpdateReducer,
+} from './reducers/faq_reducer'
+
 import { themeReducer } from './reducers/theme_reducer'
 
 const reducer = combineReducers({
@@ -113,6 +130,17 @@ const reducer = combineReducers({
   userCollection: userCollectionReducer,
   forgotPassword: forgotPasswordReducer,
   resetPassword: resetPasswordReducer,
+  articlesList: articlesListReducer,
+  articleDetail: articleDetailReducer,
+  articleDelete: articleDeleteReducer,
+  articleCreate: articleCreateReducer,
+  articleUpdate: articleUpdateReducer,
+  articleBySlug: articleBySlugReducer,
+  faqsList: faqsListReducer,
+  faqDetail: faqDetailReducer,
+  faqDelete: faqDeleteReducer,
+  faqCreate: faqCreateReducer,
+  faqUpdate: faqUpdateReducer,
   themeRed: themeReducer,
 })
 

@@ -1,5 +1,6 @@
 import Home from '../pages/Home';
 import Product from '../pages/Product';
+import Table from '../pages/Table';
 
 import Authors from '../pages/Authors';
 import AuthorDetail from '../pages/AuthorDetail';
@@ -30,6 +31,17 @@ import Select from '../pages/Select';
 import Modal from '../pages/Modals';
 import Gradients from '../pages/Gradients';
 
+import Articles from '../pages/Articles';
+import ArticleAdd from '../pages/ArticleAdd';
+import ArticleDetail from '../pages/ArticleDetail';
+import ArticleEdit from '../pages/ArticleEdit';
+
+import Faqs from '../pages/Faqs';
+import FaqAdd from '../pages/FaqAdd';
+import FaqDetail from '../pages/FaqDetail';
+import FaqEdit from '../pages/FaqEdit';
+
+
 var route = [
     {
         path: "/index",
@@ -43,6 +55,13 @@ var route = [
         name: "Product",
         icon: "ni ni-tv-2 text-primary",
         component: Product,
+        layout: "/admin",
+    },
+    {
+        path: "/table",
+        name: "Table",
+        icon: "ni ni-tv-2 text-primary",
+        component: Table,
         layout: "/admin",
     },
     {
@@ -176,6 +195,62 @@ var route = [
         name: "Edit User",
         icon: "ni ni-tv-2 text-primary",
         component: UserEdit,
+        layout: "/admin",
+    },
+    {
+        path: "/faqs",
+        name: "Faqs",
+        icon: "ni ni-tv-2 text-primary",
+        component: Faqs,
+        layout: "/admin",
+    },
+    {
+        path: "/add-faq",
+        name: "Add Faq",
+        icon: "ni ni-tv-2 text-primary",
+        component: FaqAdd,
+        layout: "/admin",
+    },
+    {
+        path: "/edit-faq/:id",
+        name: "Edit Faq",
+        icon: "ni ni-tv-2 text-primary",
+        component: FaqEdit,
+        layout: "/admin",
+    },
+    {
+        path: "/faq/:id?",
+        name: "Faq Detail",
+        icon: "ni ni-tv-2 text-primary",
+        component: FaqDetail,
+        layout: "/admin",
+    },
+    {
+        path: "/articles",
+        name: "Articles",
+        icon: "ni ni-tv-2 text-primary",
+        component: Articles,
+        layout: "/admin",
+    },
+    {
+        path: "/add-article",
+        name: "Add Article",
+        icon: "ni ni-tv-2 text-primary",
+        component: ArticleAdd,
+        layout: "/admin",
+    },
+    {
+        path: "/edit-article/:id",
+        name: "Edit Article",
+        icon: "ni ni-tv-2 text-primary",
+        component: ArticleEdit,
+        layout: "/admin",
+    },
+    {
+        path: "/article/:id?",
+        name: "Article Detail",
+        icon: "ni ni-tv-2 text-primary",
+        component: ArticleDetail,
         layout: "/admin",
     },
     {

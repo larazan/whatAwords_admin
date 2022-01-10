@@ -29,7 +29,7 @@ const Modal = ({ showModal, setShowModal, deleteHandler, selectID }) => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   strokeWidth="2"
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
@@ -42,9 +42,9 @@ const Modal = ({ showModal, setShowModal, deleteHandler, selectID }) => {
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
               <h2 className="text-xl font-bold py-4 ">Are you sure?</h2>
@@ -55,7 +55,7 @@ const Modal = ({ showModal, setShowModal, deleteHandler, selectID }) => {
               <span className="text-sm text-gray-500 font-medium px-8">{selectID}</span>
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">
-              <button className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border border-gray-400 text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100" onClick={() => setShowModal((prev) => !prev)}>
+              <button type="button" className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border border-gray-400 text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100" onClick={() => setShowModal((prev) => !prev)}>
                 Cancel
               </button>
               <button 

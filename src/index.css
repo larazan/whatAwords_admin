@@ -613,6 +613,7 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
 }
 .tags-input__tags .tag {
+  min-width: 40px;
   background-color: #f1f1f1;
   padding: 5px 10px;
   border-radius: 4px;
@@ -648,4 +649,10 @@ input:checked ~ .dot {
 input:checked ~ .dot {
   transform: translateX(100%);
   background-color: #48bb78;
+}
+
+.editor-class {
+
+  padding: .5rem;
+  border: 1px solid #ccc;
 }

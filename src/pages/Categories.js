@@ -45,6 +45,8 @@ const Categories = () => {
   console.log(categories);
 
   const deleteHandler = (e) => {
+    console.log(`deleted data ${e.currentTarget.id}`);
+    // console.log(typeof(e.currentTarget.id));
     setShowModal((prev) => !prev);
     dispatch(deleteCategory(e.currentTarget.id))
   }
